@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include('../includes/head.ejs')%>
+  </head>
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <div class="message"></div>
+    <select name="userType">
+      <option value="rAgent">وكيل منطقه</option>
+      <option value="dAgent">مندوب شحن</option>
+      <option value="cAgent">ممثل خدمة عملاء</option>
+      <option value="secAgent">مسئول سيكيوريتى</option>
+    </select>
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+    <button type="button" onclick="getUserType()">إختيار</button>
+    <hr />
+    <div class="names">
+      <select name="agentId" id="usr"></select>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      <button type="button" onclick="removeUser(this)">حذف</button>
+    </div>
+    <script src="/js/hqActions.js"></script>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "cairo", sans-serif;
+}
+
+.container {
+  max-width: 114rem;
+  margin: auto;
+}
+
+.orange {
+  color: #ff9100;
+}
+
+.green {
+  color: #2bff03;
+}
+
+header {
+  padding: 12.5rem 0 2.5rem;
+  min-height: 100vh;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from(rgba(232, 86, 85, 0.6)),
+      to(rgba(99, 83, 109, 0.6))
+    ),
+    url("../img/bck.webp");
+  background-image: -o-linear-gradient(
+      top left,
+      rgba(232, 86, 85, 0.6),
+      rgba(99, 83, 109, 0.6)
+    ),
+    url("../img/bck.webp");
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(232, 86, 85, 0.6),
+      rgba(99, 83, 109, 0.6)
+    ),
+    url("../img/bck.webp");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+header .company_name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 60px;
+  color: white;
+  font-weight: 200;
+  margin-bottom: 1rem;
+}
+
+header .company_Quote {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+header .company_quote2 {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+@media (max-width: 450px) {
+  header .company_quote2 {
+    font-size: 2.5rem;
+  }
+}
+
+header .communication {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+header .communication .phons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+header .communication .phons .phone {
+  padding: 0.8rem 2.5rem;
+  background-color: white;
+  color: #ff9100;
+  font-size: 2rem;
+  margin: 0 0.5rem 1rem;
+}
+
+header .communication .phons .phone i {
+  color: #ff9100;
+  font-size: 2rem;
+}
+
+header .communication .facebook {
+  color: #2760fd;
+  font-size: 2rem;
+  padding: 0.8rem 2rem;
+  background-color: white;
+  margin-right: 1.5rem;
+  -webkit-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+@media (max-width: 917px) {
+  header .communication .facebook {
+    margin-right: 0;
+  }
+}
+
+header .communication .facebook:hover {
+  color: white;
+  background-color: #2760fd;
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+header .communication .facebook:active {
+  color: #2760fd;
+  background-color: white;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+header .workwithus {
+  padding: 0.8rem 5rem;
+  margin-top: 5px;
+  font-size: 2rem;
+  background-color: white;
+  border-radius: 40px;
+  display: inline-block;
+  color: #ff9100;
+  -webkit-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+header .workwithus:hover {
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+  color: white;
+  background-color: #ff9100;
+}
+
+header .workwithus:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  color: #ff9100;
+  background-color: white;
+}
+
+.about {
+  padding: 5rem 1rem 7.5rem;
+  text-align: center;
+}
+
+.about h2.heading {
+  font-size: 40px;
+  margin-bottom: 5rem;
+  color: #ff9100;
+  font-weight: 400;
+}
+
+.about .flex-features {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.about .flex-features .item {
+  padding: 7.5rem;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-left: 1rem;
+  width: 260px;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 400px) {
+  .about .flex-features .item {
+    margin-left: 0;
+  }
+}
+
+.about .flex-features .item i {
+  font-size: 100px;
+  color: #ff9100;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.about .flex-features .item h3.type {
+  color: #ff9100;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.designers {
+  padding: 1.5rem;
+  background-color: #212020;
+  color: white;
+  font-family: "cairo", sans-serif;
+}
+
+.designers .container {
+  text-align: center;
+}
+
+.designers .container a {
+  font-family: "cairo", sans-serif;
+  color: #ff9100;
+}
+
+footer {
+  background-color: #141414;
+  color: #ff9100;
+  padding: 2rem;
+}
+
+footer p.rights {
+  text-align: center;
+  font-size: 1.6rem;
+}

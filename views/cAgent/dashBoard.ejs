@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <%-include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/agentDashboard.css" />
+  </head>
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <!-- main -->
+    <main class="dashboard">
+      <!-- container -->
+      <div class="container">
+        <%if (errorMsg) {%>
+        <h3><%=errorMsg%></h3>
+        <%}%>
+        <!-- navbar -->
+        <!-- navbar -->
+        <!-- navbar -->
+        <!-- navbar -->
+        <!-- side menu section -->
+        <section class="side-menu">
+          <!-- side menu items container -->
+          <ul class="side-menu--items">
+            <!-- an item -->
+            <a href="/cAgent/createOrder" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">إنشاء شحنات</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/plus.svg"
+                  alt="انشاء شحنات"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+            <!-- an item -->
+            <a href="/cAgent/createDagent" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">إنشاء مندوب شحن</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/interview.svg"
+                  alt="انشاء مندوب شحن"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+            <a href="/cAgent/dAgentReq" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">طلبات مندوبى الشحن</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/notifications.svg"
+                  alt="طلب مندوب شحن"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+            <a href="/cAgent/modify/order" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">تعديل أوردر بائع</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/edit.svg"
+                  alt="تعديل أوردر بائع"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+            <a href="/cAgent/callHistory" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">سجل المكالمات</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/live-chat.svg"
+                  alt="سجل المكالمات"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+          </ul>
+        </section>
+        <div class="container-content">
+          <!-- all orders part -->
+          <div class="container-orders">
+            <!-- main orders -->
+            <div class="orders">
+              <!-- container -->
+              <!-- main heading -->
+              <% if (packages.length > 0) {%>
+                <div>
+                  <% for (let p of packages) {%>
+                  <!-- order -->
+                  <div class="order">
+                    <h3 class="name"><%=p.clientName%></h3>
+                    <p class="status"><%=p.reason%></p>
+                    <p class="status">(seller)<%=p.sellerName%></p>
+                    <p class="status"><%=p.sellerPhone%></p>
+                    <p class="status"><%=p.productName%></p>
+                    <p class="status"><%=p.barCode%></p>
+                  </div>
+                  <% } %>
+                </div>
+                <%}else{%>
+                <h2 class="heading-en">لا يوجد شحنات تم رفضها</h2>
+                <%}%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" name="callAgent" value="<%=callAgent%>" />
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/notify.js"></script>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>

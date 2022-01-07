@@ -1,0 +1,66 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'cairo', sans-serif;
+}
+
+main.showing {
+  min-height: 100vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#736EDF), to(#31C6DB));
+  background-image: -o-linear-gradient(top left, #736EDF, #31C6DB);
+  background-image: linear-gradient(to bottom right, #736EDF, #31C6DB);
+}
+
+.container {
+  max-width: 114rem;
+  margin: auto;
+  padding: 7.5rem .75rem 2.5rem;
+}
+
+.content-flex {
+  padding: 3rem;
+  margin: auto;
+  background-color: #1B202A;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section.card {
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#736EDF), to(#31C6DB));
+  background-image: -o-linear-gradient(top left, #736EDF, #31C6DB);
+  background-image: linear-gradient(to bottom right, #736EDF, #31C6DB);
+  min-width: 270px;
+  max-width: 270px;
+  min-height: 270px;
+  margin: .5rem;
+}
+
+section.card h2.name {
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  font-size: 1.9rem;
+  color: white;
+}
+
+section.card p {
+  font-size: 1.6rem;
+  color: #eeeeee;
+  margin-bottom: 1.3rem;
+}

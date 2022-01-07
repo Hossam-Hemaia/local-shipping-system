@@ -1,0 +1,388 @@
+.card {
+  min-height: 280px;
+  min-width: 280px;
+  max-width: 400px;
+  background-color: #1b202a;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  margin: 0 0.5rem 1rem;
+  -webkit-box-shadow: 0 10px 20px rgba(27, 32, 42, 0.4);
+  box-shadow: 0 10px 20px rgba(27, 32, 42, 0.4);
+}
+
+@media (max-width: 400px) {
+  .card {
+    margin: 0 0 1rem;
+  }
+}
+
+.card .options {
+  position: relative;
+}
+
+.card .options-dots {
+  padding: 5px 7px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.card .options-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 3px;
+  background-color: white;
+  pointer-events: none;
+}
+
+.card .options-items {
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+  background-color: white;
+  color: #1b202a;
+  right: 7px;
+  list-style: none;
+  display: none;
+}
+
+.card .options-items li {
+  padding: 3px 1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.card .options.edite .options-items {
+  display: block;
+}
+
+.card .mini {
+  text-align: center;
+}
+
+.card .mini .card_name {
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: #a2a9b5;
+}
+
+.card .mini .product_name {
+  font-size: 2rem;
+  color: white;
+}
+
+.card .mini .product_price {
+  font-size: 4rem;
+  font-weight: 300;
+  color: #b54e40;
+}
+
+.card form.card_inputs__form .show-area {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card form.card_inputs__form .show-area button.mini_btn {
+  padding: 0.6rem 1rem;
+  width: 100%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  margin: 0.5rem auto;
+  display: inline-block;
+  font-family: "cairo", sans-serif;
+}
+
+.card form.card_inputs__form .show-area button.mini_btn-1 {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#736edf),
+    to(#31c6db)
+  );
+  background-image: -o-linear-gradient(left, #736edf, #31c6db);
+  background-image: linear-gradient(to right, #736edf, #31c6db);
+}
+
+.card form.card_inputs__form .show-area button.mini_btn-2 {
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#736edf),
+    to(#31c6db)
+  );
+  background-image: -o-linear-gradient(right, #736edf, #31c6db);
+  background-image: linear-gradient(to left, #736edf, #31c6db);
+}
+
+.card form.card_inputs__form .hidden-area {
+  display: none;
+}
+
+.card form.card_inputs__form .hidden-area input {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 3px solid #232834;
+  background-color: #34384d;
+  width: 100%;
+  margin-bottom: 0.8rem;
+  font-family: "cairo", sans-serif;
+  color: #a2a9b5;
+  outline: none;
+}
+
+.card form.card_inputs__form .hidden-area input::-webkit-input-placeholder {
+  font-family: "cairo", sans-serif;
+  font-size: 1.4rem;
+  color: #a2a9b5;
+}
+
+.card form.card_inputs__form .hidden-area input::-moz-placeholder {
+  font-family: "cairo", sans-serif;
+  font-size: 1.4rem;
+  color: #a2a9b5;
+}
+
+.card form.card_inputs__form .hidden-area input:-ms-input-placeholder {
+  font-family: "cairo", sans-serif;
+  font-size: 1.4rem;
+  color: #a2a9b5;
+}
+
+.card form.card_inputs__form .hidden-area input::-ms-input-placeholder {
+  font-family: "cairo", sans-serif;
+  font-size: 1.4rem;
+  color: #a2a9b5;
+}
+
+.card form.card_inputs__form .hidden-area input::placeholder {
+  font-family: "cairo", sans-serif;
+  font-size: 1.4rem;
+  color: #a2a9b5;
+}
+
+.card form.card_inputs__form .hidden-area label {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #8f91d1;
+  text-shadow: 0 3px 3px rgba(143, 145, 209, 0.4);
+}
+
+.card form.card_inputs__form .hidden-area select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-family: "cairo", sans-serif;
+  background-color: #34384d;
+  border: 3px solid #232834;
+  color: #a2a9b5;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+.card form.card_inputs__form .hidden-area button.card-submit {
+  width: 100%;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#0c8aa6),
+    to(#26b8ae)
+  );
+  background-image: -o-linear-gradient(left, #0c8aa6, #26b8ae);
+  background-image: linear-gradient(to right, #0c8aa6, #26b8ae);
+  border: none;
+  padding: 0.6rem 1rem;
+  outline: none;
+  margin-top: 2rem;
+  font-family: "cairo", sans-serif;
+  font-family: 600;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+
+.card form.card_inputs__form .hidden-area button.card-submit:hover {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#26b8ae),
+    to(#0c8aa6)
+  );
+  background-image: -o-linear-gradient(left, #26b8ae, #0c8aa6);
+  background-image: linear-gradient(to right, #26b8ae, #0c8aa6);
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+.card form.card_inputs__form .hidden-area button.card-submit:active {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#0c8aa6),
+    to(#26b8ae)
+  );
+  background-image: -o-linear-gradient(left, #0c8aa6, #26b8ae);
+  background-image: linear-gradient(to right, #0c8aa6, #26b8ae);
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.card.full-options .options {
+  display: none;
+}
+
+.card.full-options .mini {
+  display: none;
+}
+
+.card.full-options .show-area {
+  display: none;
+}
+
+.card.full-options .hidden-area {
+  display: block !important;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "cairo", sans-serif;
+}
+
+.recieve {
+  min-height: 100vh;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    from(#736edf),
+    to(#31c6db)
+  );
+  background-image: -o-linear-gradient(top left, #736edf, #31c6db);
+  background-image: linear-gradient(to bottom right, #736edf, #31c6db);
+}
+
+.container {
+  max-width: 114rem;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.main-content {
+  padding: 5rem 0;
+}
+
+.heading {
+  padding: 0.5rem;
+  font-size: 1.7rem;
+  background-color: #1b202a;
+  color: #8f91d1;
+  margin-bottom: 3rem;
+}
+
+.heading-text {
+  text-shadow: 0 4px 4px rgba(143, 145, 209, 0.4);
+}
+
+.content-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.second_form {
+  text-align: center;
+}
+
+.second_form button.form_2--submit {
+  background-color: white;
+  width: 60%;
+  border: none;
+  padding: 0.6rem 1rem;
+  outline: none;
+  margin-top: 2rem;
+  font-family: "cairo", sans-serif;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-top: 3rem;
+}
+
+@media (max-width: 450px) {
+  .second_form button.form_2--submit {
+    width: 100%;
+  }
+}
+
+.second_form button.form_2--submit:hover {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#26b8ae),
+    to(#0c8aa6)
+  );
+  background-image: -o-linear-gradient(left, #26b8ae, #0c8aa6);
+  background-image: linear-gradient(to right, #26b8ae, #0c8aa6);
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+.second_form button.form_2--submit:active {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#0c8aa6),
+    to(#26b8ae)
+  );
+  background-image: -o-linear-gradient(left, #0c8aa6, #26b8ae);
+  background-image: linear-gradient(to right, #0c8aa6, #26b8ae);
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+/*
+.card form.card_inputs__form .hidden-area button.card-submit {
+  display: block;
+}
+*/

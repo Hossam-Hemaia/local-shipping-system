@@ -1,0 +1,308 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "cairo", sans-serif;
+}
+
+main.deliverPackage {
+  min-height: 100vh;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    from(#736edf),
+    to(#31c6db)
+  );
+  background-image: -o-linear-gradient(top left, #736edf, #31c6db);
+  background-image: linear-gradient(to bottom right, #736edf, #31c6db);
+}
+
+.container {
+  max-width: 114rem;
+  margin: auto;
+  padding: 0 0.75rem;
+}
+
+.main-content {
+  padding-top: 10.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.content {
+  background-color: #1b202a;
+  padding: 4rem 5rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+@media (max-width: 450px) {
+  .content {
+    padding: 4rem 2rem;
+  }
+}
+
+.content .first {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #313547;
+  margin-bottom: 2rem;
+}
+
+.content .first form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.content .first form input {
+  padding: 0.5rem 1rem;
+  width: 40%;
+  background-color: #34384d;
+  border: 3px solid #232834;
+  margin-left: 1.5rem;
+  outline: none;
+  font-family: "cairo", sans-serif;
+  color: #a2a9b5;
+}
+
+.content .first form input::-webkit-input-placeholder {
+  font-family: "cairo", sans-serif;
+}
+
+.content .first form input::-moz-placeholder {
+  font-family: "cairo", sans-serif;
+}
+
+.content .first form input:-ms-input-placeholder {
+  font-family: "cairo", sans-serif;
+}
+
+.content .first form input::-ms-input-placeholder {
+  font-family: "cairo", sans-serif;
+}
+
+.content .first form input::placeholder {
+  font-family: "cairo", sans-serif;
+}
+
+.content .first form button {
+  cursor: pointer;
+  padding: 0.4rem 1rem;
+  width: 40%;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    from(#0c8aa6),
+    to(#26b8ae)
+  );
+  background-image: -o-linear-gradient(top left, #0c8aa6, #26b8ae);
+  background-image: linear-gradient(to bottom right, #0c8aa6, #26b8ae);
+  color: white;
+  font-family: "cairo", sans-serif;
+  border: 0;
+  outline: 0;
+  font-weight: 600;
+  -webkit-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.content .first form button:hover {
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+.content .first form button:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .content .first form input {
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .content .first form button {
+    width: 100%;
+  }
+}
+
+.content .second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #313547;
+  margin-bottom: 3rem;
+}
+
+.content .second input {
+  padding: 0.5rem 1rem;
+  background-color: #34384d;
+  border: 3px solid #232834;
+  outline: none;
+  font-family: "cairo", sans-serif;
+  color: #a2a9b5;
+  width: 48%;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .content .second input {
+    width: 100%;
+  }
+}
+
+.content .third .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.content .third .flex > * {
+  width: 48%;
+  font-family: "cairo", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .content .third .flex > * {
+    width: 100%;
+  }
+}
+
+.content .third .flex .select label {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: #8f91d1;
+  text-shadow: 0 4px 4px rgba(143, 145, 209, 0.4);
+}
+
+.content .third .flex .select select {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #34384d;
+  color: #a2a9b5;
+  border: 3px solid #232834;
+  font-family: "cairo", sans-serif;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .content .third .flex .select select {
+    margin-bottom: 1rem;
+  }
+}
+
+.content .third .flex input {
+  padding: 0.5rem 1rem;
+  background-color: #34384d;
+  border: 3px solid #232834;
+  margin-left: 1.5rem;
+  outline: none;
+  font-family: "cairo", sans-serif;
+  color: #a2a9b5;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .content .third .flex input {
+    margin-left: 0;
+  }
+}
+
+.content .third .flex input::-webkit-input-placeholder {
+  font-family: "cairo", sans-serif;
+}
+
+.content .third .flex input::-moz-placeholder {
+  font-family: "cairo", sans-serif;
+}
+
+.content .third .flex input:-ms-input-placeholder {
+  font-family: "cairo", sans-serif;
+}
+
+.content .third .flex input::-ms-input-placeholder {
+  font-family: "cairo", sans-serif;
+}
+
+.content .third .flex input::placeholder {
+  font-family: "cairo", sans-serif;
+}
+
+.content .third .center {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.content .third .center button.last-btn {
+  width: 48%;
+  padding: 0.5rem 1rem;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    from(#736edf),
+    to(#31c6db)
+  );
+  background-image: -o-linear-gradient(top left, #736edf, #31c6db);
+  background-image: linear-gradient(to bottom right, #736edf, #31c6db);
+  color: white;
+  font-family: "cairo", sans-serif;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .content .third .center button.last-btn {
+    width: 100%;
+  }
+}
+
+.content .third .center button.last-btn:hover {
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+.content .third .center button.last-btn:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}

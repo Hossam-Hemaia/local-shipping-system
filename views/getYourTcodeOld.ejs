@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include('includes/head.ejs')%>
+    <style>
+      section {
+        margin-top: 15rem;
+      }
+    </style>
+  </head>
+  <body>
+    <%-include('includes/nav.ejs')%>
+    <section>
+      <h2>الحصول على رقم التتبع لشحنه</h2>
+      <input type="date" name="date" placeholder="تاريخ الشحنه" />
+      <label for="region">المحافظه التابع لها الشحنه</label>
+      <select name="region" required>
+        <%-include('includes/gov.ejs')%>
+      </select>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      <button type="button" onclick="getTrackingCode()">اظهار الشحنات</button>
+    </section>
+    <hr />
+    <table id="tbl">
+      <tr>
+        <th>اسم العميل</th>
+        <th>العنوان</th>
+        <th>رقم التتبع</th>
+      </tr>
+    </table>
+    <script src="/js/pkgActions.js"></script>
+    <%-include('includes/footer.ejs')%>
+  </body>
+</html>

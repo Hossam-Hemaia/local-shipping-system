@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <%-include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/Approve_Seller_page.css" />
+  </head>
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <!-- background -->
+    <main class="approve">
+      <!-- container -->
+      <div class="container">
+        <!-- form background -->
+        <div class="approve-content">
+          <!-- main heading -->
+          <h1 class="approve-heading">اعتماد البائع</h1>
+
+          <!-- start with form -->
+          <form action="/seller/approve" method="POST" id="approve">
+            <!-- name and phone -->
+            <div class="flex-input">
+              <input
+                type="text"
+                name="name"
+                class="name"
+                placeholder="الاسم"
+                required
+                value="<%=seller.name%>"
+              />
+              <input
+                type="tel"
+                name="phoneNumber"
+                class="phone"
+                placeholder="الهاتف"
+                required
+                value="<%=seller.phoneNumber%>"
+              />
+            </div>
+            <!-- address and niche -->
+            <div class="flex-input">
+              <input
+                type="text"
+                name="address"
+                class="address"
+                placeholder="العنوان"
+                required
+                value="<%=seller.address%>"
+              />
+              <input
+                type="text"
+                name="niche"
+                class="niche"
+                placeholder="نوع النشاط"
+                required
+                value="<%=seller.niche%>"
+              />
+            </div>
+            <!-- selects -->
+            <div class="flex-input">
+              <!-- first select for region -->
+              <div class="region-select">
+                <label for="region">المحافظه</label>
+                <select name="region" id="region">
+                  <option value="<%=seller.region%>" selected>
+                    <%=seller.region%>
+                  </option>
+                  <%-include('../includes/gov.ejs')%>
+                </select>
+              </div>
+
+              <!-- select for payment methods -->
+
+              <div class="payment">
+                <label for="">طريقة الدفع</label>
+                <!-- payment select -->
+                <select
+                  name="paymentMethod"
+                  id="paymentSelect"
+                  class="payment-method"
+                >
+                  <option value="deliveryOnly">شحن فقط</option>
+                  <option value="prepaid">دفع مقدم</option>
+                  <option value="postpaid">دفع آجل</option>
+                  <option value="ratio">نسبه</option>
+                </select>
+
+                <!-- input ratio -->
+                <input
+                  type="number"
+                  name="ratioPercent"
+                  id="ratioInput"
+                  placeholder="النسبه"
+                  step="0.01"
+                  min="0.01"
+                  max="0.99"
+                />
+              </div>
+            </div>
+
+            <!-- has offer or no -->
+            <div class="flex-input">
+              <!-- offer part -->
+              <div class="offer">
+                <!-- offer part -->
+                <div class="offer-has">
+                  <label for="hasOffer">لديه تخفيض ؟</label>
+                  <!-- input checkbox -->
+                  <input type="checkbox" name="hasOffer" id="hasOffer" />
+                </div>
+                <!-- date part -->
+                <div class="offer-date">
+                  <p class="offer-end">موعد انتهاء التخفيض</p>
+                  <!-- input date -->
+                  <input
+                    dir="ltr"
+                    type="date"
+                    placeholder="اختيار التاريخ"
+                    name="offerEndDate"
+                    id="offerEndDate"
+                  />
+                </div>
+              </div>
+
+              <!-- rejection policy -->
+              <div class="rejection-container">
+                <!-- label -->
+                <label for="rejectionPolicy">سياسة المرتجع</label>
+                <!-- rejection select -->
+                <select
+                  name="rejectionPolicy"
+                  id="rejectionPolicy"
+                  class="rejection"
+                >
+                  <option value="onClient">على العميل</option>
+                  <option value="onSeller">على البائع</option>
+                  <option value="halfByHalf">النصف بالنصف</option>
+                  <option value="onShipper">على شركة الشحن</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- btn -->
+            <div class="center">
+              <input type="hidden" name="sellerId" value="<%= seller._id%>" />
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <button type="submit" class="btn-submit">اعتماد</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="js/approve_seller_page.js"></script>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>

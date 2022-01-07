@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <%-include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/sellerRequest.css" />
+  </head>
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <!-- background -->
+    <main class="sellerRequest">
+      <!-- container -->
+      <div class="container">
+        <!-- data container -->
+        <div class="data-container">
+          <!-- main heading -->
+          <h1 class="heading">طلبات تسجيل مندوبى الشحن</h1>
+          <!-- data part -->
+          <% if (requests.length > 0) {%>
+          <div class="data">
+            <!-- item -->
+            <% for(let req of requests) {%>
+            <div class="item">
+              <!-- the name  -->
+              <h2 class="item-name">
+                <a href="/hq/approveAgent/<%= req._id %>"><%= req.name %></a>
+              </h2>
+              <!-- the date -->
+              <span class="item-date"><%=req.currentAddress%></span>
+              <span class="item-date"><%=req.region%></span>
+            </div>
+            <%}%>
+          </div>
+          <%} else {%>
+          <h1 class="item-name">There is no requests</h1>
+          <%}%>
+        </div>
+      </div>
+    </main>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>

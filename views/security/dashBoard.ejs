@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <%-include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/agentDashboard.css" />
+  </head>
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <!-- main -->
+    <main class="dashboard">
+      <!-- container -->
+      <div class="container">
+        <!-- navbar -->
+        <!-- navbar -->
+        <!-- navbar -->
+        <!-- navbar -->
+        <!-- side menu section -->
+        <section class="side-menu">
+          <!-- side menu items container -->
+          <ul class="side-menu--items">
+            <!-- an item -->
+            <a href="/secAgent/security" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">تأمين شحنات لمندوب</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/check.svg"
+                  alt="توزيع الشحنات"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+            <!-- an item -->
+            <a href="/secAgent/security/1" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">تأمين اوردرات محافظات</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/security.svg"
+                  alt="شحنات مرتجعه"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+          </ul>
+        </section>
+        <!-- end navbar -->
+        <!-- end navbar -->
+        <!-- end navbar -->
+        <!-- end navbar -->
+
+        <!-- content container -->
+        <div class="container-content">
+          <!-- all orders part -->
+          <div class="container-orders">
+            <!-- main orders -->
+            <% if (orders.length > 0) {%>
+            <div class="orders">
+              <!-- main heading -->
+              <h1 class="heading">أوردراتك</h1>
+              <!-- container -->
+              <div>
+                <% for (let o of orders) {%> <% let dateStr =
+                `${o.orderDate}`;%> <% let shortDate = dateStr.substr(0,
+                dateStr.indexOf('GMT')); %>
+                <!-- order -->
+                <div class="order">
+                  <!-- date -->
+                  <p class="date"><%=shortDate%></p>
+                  <!-- status -->
+                  <p class="status"><%=o.orderStatus%></p>
+                  <!-- number -->
+                  <p class="status"><%=o.packages.length%></p>
+                  <!-- recieve -->
+                  <p class="recieve-order">
+                    <%= o.secured === false? 'Not secured': 'secured'%>
+                  </p>
+                </div>
+                <% } %>
+              </div>
+            </div>
+            <%}else{%>
+            <h2
+              class="heading-en"
+              style="
+                color: rgb(172, 144, 144);
+                font-weight: 400;
+                font-size: 1.5rem;
+                margin-bottom: 1.6rem;
+              "
+            >
+              لا يوجد شحنات لتأمينها
+            </h2>
+            <%}%>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>

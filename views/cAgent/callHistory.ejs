@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <%-include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/callHistory.css" />
+  </head>
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <!-- background -->
+    <main class="call">
+      <!-- container -->
+      <div class="container">
+        <div class="main-content">
+          <!-- content -->
+          <div class="main">
+            <!-- heading -->
+            <div class="heading">
+              <!-- heading text -->
+              <h1 class="heading_text">سجل المكالمات</h1>
+            </div>
+            <!-- form -->
+            <form action="/cAgent/callHistory" method="POST">
+              <div class="flex-content">
+                <!-- select box -->
+                <div class="select">
+                  <label for="callType">نوع المكالمه</label>
+                  <select name="callType" id="callType">
+                    <option value="followUp">متابعه</option>
+                    <option value="complaint">شكوى</option>
+                    <option value="newOrder">طلب أوردر</option>
+                    <option value="marketing">تسويق</option>
+                  </select>
+                </div>
+                <!-- input phone -->
+                <input
+                  type="tel"
+                  name="callingNumber"
+                  id="clientPhone"
+                  placeholder="الهاتف"
+                />
+              </div>
+              <!-- textarea -->
+              <textarea
+                name="callSummery"
+                id="callSummary"
+                placeholder="ملخص المكالمه"
+                cols="30"
+                rows="10"
+              ></textarea>
+              <!-- btn -->
+              <div class="center">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                <button type="submit" class="btn-submit">تسجيل</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>

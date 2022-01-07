@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <%-include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/agentDashboard.css" />
+  </head>
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <!-- main -->
+    <main class="dashboard">
+      <!-- container -->
+      <div class="container">
+        <!-- navbar -->
+        <!-- navbar -->
+        <!-- navbar -->
+        <!-- navbar -->
+        <!-- side menu section -->
+        <section class="side-menu">
+          <!-- side menu items container -->
+          <ul class="side-menu--items">
+            <!-- an item -->
+            <a href="/headOffice/removeUser" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">حذف مستخدم</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/delete-account.svg"
+                  alt="حذف مستخدم"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+            <!-- an item -->
+            <a href="/headOffice/modifyPackage" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">تعديل شحنه</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/edit.svg"
+                  alt="تعديل شحنه"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+            <a href="/hq/seller/requests" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">طلبات تسجيل بائع</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/notifications.svg"
+                  alt="اضافة شحنه"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+            <a href="/hq/dAgentReq" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">طلبات مندوبى الشحن</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/interview.svg"
+                  alt="طلب مندوب شحن"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+            <!-- an item -->
+            <a href="/headOffice/resetPassword" class="item">
+              <!-- li content container -->
+              <li class="item_li">
+                <!-- the text for big screens -->
+                <span class="item_li__text">إعادة ضبط كلمة مرور</span>
+                <!-- the icon for small screen -->
+                <img
+                  src="/img/icon/secure.svg"
+                  alt="إعتماد بائع"
+                  class="item_li__img"
+                />
+              </li>
+            </a>
+          </ul>
+        </section>
+        <div class="container-content">
+          <!-- all orders part -->
+          <div class="container-orders">
+            <!-- main orders -->
+            <div class="orders">
+              <!-- container -->
+              <!-- main heading -->
+              <h1 class="heading">الأوردرات الوارده من بائعين</h1>
+              <% if (orders.length > 0) {%>
+              <div>
+                <% for (let o of orders) {%> <% let dateStr = `${o.date}`;%> <%
+                let shortDate = dateStr.substr(0, dateStr.indexOf('GMT')); %>
+                <!-- order -->
+                <div class="order">
+                  <!-- name -->
+                  <h3 class="name"><%=o.sellerId.name%></h3>
+                  <!-- date -->
+                  <p class="date"><%=shortDate%></p>
+                  <!-- status -->
+                  <p class="status"><%=o.orderStatus%></p>
+                  <!-- report -->
+                  <a
+                    href="/headOffice/orderDetails/<%= o._id%>/<%=o.sellerId.name%>"
+                    target="_blank"
+                    class="report"
+                    >تقرير الطلب</a
+                  >
+                  <!-- region -->
+                  <p class="status"><%=o.receivingRegion%></p>
+                </div>
+                <% } %>
+              </div>
+              <%}else{%>
+              <h2 class="heading-en">لا يوجد شحنات من البائعين</h2>
+              <%}%>
+            </div>
+          </div>
+          <div class="container-orders">
+            <!-- main orders -->
+            <div class="orders">
+              <!-- container -->
+              <!-- main heading -->
+              <h1 class="heading">شحنات تم رفضها من المستلم</h1>
+              <% if (packages.length > 0) {%>
+                <div>
+                  <% for (let p of packages) {%>
+                  <!-- order -->
+                  <div class="order">
+                    <h3 class="name"><%=p.clientName%></h3>
+                    <p class="status"><%=p.reason%></p>
+                    <p class="status">(seller)<%=p.sellerName%></p>
+                    <p class="status"><%=p.sellerPhone%></p>
+                    <p class="status"><%=p.productName%></p>
+                    <p class="status"><%=p.barCode%></p>
+                  </div>
+                  <% } %>
+                </div>
+                <%}else{%>
+                <h2 class="heading-en">لا يوجد شحنات تم رفضها</h2>
+                <%}%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%if(user){%>
+      <input type="hidden" name="user" value="<%=user%>" />
+      <%}%>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/notify.js"></script>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>

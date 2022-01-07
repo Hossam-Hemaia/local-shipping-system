@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <%-include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/removeUser.css" />
+  </head>
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <!-- background -->
+    <main class="remove">
+      <!-- container -->
+      <div class="container">
+        <!-- main content -->
+        <div class="main-content">
+          <!-- content -->
+          <div class="content">
+            <!-- heading -->
+            <div class="heading">
+              <h1 class="heading_text">حذف مستخدم</h1>
+            </div>
+            <!-- flex-content -->
+            <div class="flex-content">
+              <!-- select -->
+              <div class="select">
+                <!-- label -->
+                <label for="userType">نوع المستخدم</label>
+                <!-- select -->
+                <select name="userType" id="userType">
+                  <option value="rAgent">وكيل منطقه</option>
+                  <option value="dAgent">مندوب توصيل</option>
+                  <option value="cAgent">خدمة عملاء</option>
+                  <option value="secAgent">مسؤول أمن</option>
+                </select>
+              </div>
+              <!-- btn -->
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <button type="button" class="btn" id="btnGetUser">إختيار</button>
+            </div>
+            <!-- flex-content -->
+            <div class="flex-content">
+              <!-- select -->
+              <div class="select">
+                <!-- label -->
+                <label for="userName">اسم المستخدم</label>
+                <!-- select -->
+                <select name="agentId" id="userName" class="usr"></select>
+              </div>
+              <!-- btn -->
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <button type="button" class="btn btn-bold" id="removeUser">
+                حذف
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js/hqActions.js"></script>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>

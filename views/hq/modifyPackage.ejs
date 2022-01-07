@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <%-include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/deliverPckage.css" />
+  </head>
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <!-- background -->
+    <main class="deliverPackage">
+      <!-- container -->
+      <div class="container">
+        <div class="main-content">
+          <div class="content">
+            <!-- top part -->
+            <div class="first">
+              <form action="/package/data" method="POST">
+                <!-- barcode input -->
+                <input
+                  type="text"
+                  name="barCode"
+                  placeholder="الباركود"
+                  class="barcode"
+                />
+                <!-- btn -->
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                <button type="button" id="getPkgDta">تأكيد</button>
+              </form>
+            </div>
+            <!-- middle part -->
+            <form action="/headOffice/modify">
+              <div class="second" id="packageData"></div>
+              <!-- last part -->
+              <div class="third">
+                <!-- btn part -->
+                <div class="center">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                  <button type="submit" class="last-btn">تعديل</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js/hqActions.js"></script>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>

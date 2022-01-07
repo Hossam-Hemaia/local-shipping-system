@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <%-include('../includes/head.ejs')%>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/createRegionAgent.css" />
+  </head>
+
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <!-- background -->
+    <main class="regionAgent">
+      <!-- container -->
+      <div class="container">
+        <!-- content container -->
+        <div class="content-container">
+          <!-- heading -->
+          <h1 class="heading">تسجيل وكيل منطقه</h1>
+          <!-- form -->
+          <form action="/rAgent/create" method="POST" id="regionAgent">
+            <!-- flex inputs -->
+            <div class="flex-input">
+              <!-- input name -->
+              <input
+                type="text"
+                name="name"
+                class="name"
+                placeholder="الاسم"
+                required
+              />
+              <!-- input username -->
+              <input
+                type="text"
+                name="userName"
+                class="username"
+                placeholder="اسم المستخدم"
+                required
+              />
+            </div>
+
+            <div class="flex-input">
+              <!-- phone input -->
+              <input
+                type="tel"
+                name="phoneNumber"
+                class="phone"
+                placeholder="الهاتف"
+                required
+              />
+              <!-- first select for region -->
+              <div class="region-select">
+                <label for="region">المحافظه</label>
+                <select name="region" id="region">
+                  <%-include('../includes/gov.ejs')%>
+                </select>
+              </div>
+            </div>
+
+            <div class="flex-input">
+              <!-- password -->
+              <input
+                type="password"
+                name="password"
+                class="password"
+                placeholder="الباسورد"
+                required
+              />
+              <!-- confirm password -->
+              <input
+                type="password"
+                name="confirmPassword"
+                class="password2"
+                placeholder="تأكيد الباسورد"
+                required
+              />
+            </div>
+
+            <div class="center">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <button type="submit" class="btn-submit">تسجيل</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>

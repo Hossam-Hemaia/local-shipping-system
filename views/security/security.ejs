@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <%-include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/securityPage.css" />
+  </head>
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <!-- background -->
+    <main class="security">
+      <div class="container">
+        <div class="main-content">
+          <!-- main heading -->
+          <h1 class="main-heading">مراجعة الشحنات</h1>
+          <!-- select box and btn - container -->
+          <div class="top-part--container">
+            <label for="AgentName" class="AgentName">اسم المندوب</label>
+            <select name="dAgentId">
+              <%for (let dAgent of dAgents){%>
+              <option value="<%=dAgent._id%>"><%=dAgent.name%></option>
+              <%}%>
+            </select>
+            <input
+              type="hidden"
+              name="fetchType"
+              value="<%= rOrders === true? 'regions': 'local'%>"
+              id="fType"
+            />
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+            <button type="button" id="dsplyInpts" class="Agent-st-btn">
+              تأكيد
+            </button>
+          </div>
+
+          <!-- bottom part -->
+
+          <div class="bottom-part">
+            <div class="inputs-container" id="secureInputs"></div>
+            <div class="center">
+              <input type="hidden" name="agentId" id="dAgent" />
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <button type="button" id="secPkgs" class="btn-main">تأكيد</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js/pkgActions.js"></script>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <%-include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/Create_Delivery_Agent.css" />
+  </head>
+  <body>
+    <%-include('../includes/nav.ejs')%>
+    <!-- background -->
+    <main class="delivery">
+      <div class="container">
+        <div class="main-content">
+          <div class="form-container">
+            <!-- main heading -->
+            <div class="heading">
+              <h1>تسجيل مندوب توصيل</h1>
+            </div>
+            <!-- start -> form -->
+            <form action="/hq/dAgent/create" method="POST">
+              <div class="input-flex">
+                <!-- name -->
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="name"
+                  placeholder="الاسم"
+                  value="<%= dAgent !== ''? dAgent.name:''%>"
+                  required
+                />
+                <!-- phone -->
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  id="phone"
+                  class="phone"
+                  placeholder="الهاتف"
+                  value="<%= dAgent !== ''? dAgent.phoneNumber:''%>"
+                  required
+                />
+              </div>
+
+              <div class="input-flex">
+                <!-- address -->
+                <input
+                  type="text"
+                  name="currentAddress"
+                  id="address"
+                  class="address"
+                  placeholder="العنوان"
+                  value="<%= dAgent !== ''? dAgent.currentAddress:''%>"
+                  required
+                />
+                <!-- national id -->
+                <input
+                  type="number"
+                  name="idNumber"
+                  id="nationalId"
+                  placeholder="رقم البطاقه"
+                  value="<%= dAgent !== ''? dAgent.idNumber:''%>"
+                  required
+                />
+              </div>
+
+              <div class="input-flex">
+                <!-- license -->
+                <input
+                  type="text"
+                  name="driverLicense"
+                  id="license"
+                  class="license"
+                  placeholder="رخصة القياده"
+                  value="<%= dAgent !== ''? dAgent.driverLicense:''%>"
+                  required
+                />
+                <!-- vehicle license -->
+                <input
+                  type="text"
+                  name="vehicleLicense"
+                  id="vehicleLicense"
+                  class="vehicleLicense"
+                  placeholder="رخصة المركبه"
+                  value="<%= dAgent !== ''? dAgent.vehicleLicense:''%>"
+                  required
+                />
+              </div>
+
+              <div class="input-flex">
+                <!-- first select for region -->
+                <div class="region-select">
+                  <label for="region">المحافظه</label>
+                  <select name="region" id="region">
+                    <option
+                      value="<%= dAgent !== ''? dAgent.region:''%>"
+                      selected
+                    >
+                      <%= dAgent !== ''? dAgent.region:''%>
+                    </option>
+                    <%-include('../includes/gov.ejs')%>
+                  </select>
+                </div>
+                <!-- vehicle select -->
+                <div class="vehicle-select">
+                  <label for="vehicleSelect">نوع المركبه</label>
+                  <select name="deliveryMean" id="vehicleSelect">
+                    <option
+                      value="<%= dAgent !== ''? dAgent.deliveryMean:''%>"
+                      selected
+                    >
+                      <%= dAgent !== ''? dAgent.deliveryMean:''%>
+                    </option>
+                    <option value="motorcycle">موتوسيكل</option>
+                    <option value="car">سياره</option>
+                  </select>
+                  <select name="carType">
+                    <option
+                      value="<%= dAgent !== ''? dAgent.carType:''%>"
+                      selected
+                    >
+                      <%= dAgent !== ''? dAgent.carType:''%>
+                    </option>
+                    <option value="sedan">ملاكى(سيدان)</option>
+                    <option value="van">فان</option>
+                    <option value="transport">نقل</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-flex">
+                <!-- payment -->
+                <div class="paymentMethod">
+                  <label for="paymentMethod">طريقة التحصيل</label>
+                  <select name="paymentMethod" id="paymentMethod" required>
+                    <option value="prepaid">دفع مقدم</option>
+                    <option value="postpaid">إيصال أمانه</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-flex">
+                <input
+                  type="text"
+                  name="userName"
+                  class="name"
+                  placeholder="User Name"
+                  required
+                />
+                <input
+                  type="password"
+                  class="name"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+                <input
+                  type="password"
+                  class="name"
+                  name="confirmPassword"
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+
+              <div class="center">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                <button type="submit" class="btn-submit">تسجيل</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%-include('../includes/footer.ejs')%>
+  </body>
+</html>
